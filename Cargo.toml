@@ -1,0 +1,19 @@
+[package]
+name = "psxbuilder"
+version = "1.0.0-beta.1"
+description = "A tool used for building and extracting psx games."
+authors = ["SaturnKai"]
+license = "GPL-2.0"
+repository = "https://github.com/SaturnKai/psxbuilder"
+edition = "2021"
+
+[dependencies]
+colored = "2.1.0"
+reqwest = { version = "0.12.3", features = ["blocking"]}
+zip = "0.6.6"
+
+[profile.release]
+strip = true
+opt-level = "s"
+lto = true
+codegen-units = 1
